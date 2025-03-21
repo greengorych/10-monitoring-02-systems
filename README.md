@@ -127,6 +127,34 @@ Push-система мониторинга.
     - Zabbix
     - VictoriaMetrics
     - Nagios
+
+### Ответ.
+
+Prometheus.
+Тип: Pull
+
+Prometheus по умолчанию использует pull-модель, опрашивая экспортеры по HTTP. Есть возможность использовать push через Pushgateway для некоторых случаев.
+
+TICK stack (Telegraf, InfluxDB, Chronograf, Kapacitor)
+Тип: Push
+
+Telegraf агент собирает метрики и отправляет их в InfluxDB работая в решиже push.
+
+Zabbix
+Тип: Pull + Push
+
+Zabbix агенты могут работать как в активном push режиме отправляя данные на сервер, так и в pull, когда сервер их опрашивает.
+
+VictoriaMetrics
+Тип: Pull + совместимость с Push
+
+VictoriaMetrics - это TSDB (time series database), которая совместима с Prometheus. Может принимать push из других систем, например, от Prometheus или Telegraf. Также VictoriaMetrics поддерживает Prometheus scraping API, позволяя напрямую пуллить метрики с экспортёров.
+
+Nagios
+Тип: Pull + Push
+
+Nagios, как и Zabbix с помощью NCPA агента может работать в режиме pull и push.
+
 #
 7. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
 используя технологии docker и docker-compose.
