@@ -134,13 +134,13 @@ Prometheus.
 
   Тип: Pull
 
-  Prometheus по умолчанию использует pull-модель, опрашивая экспортеры по HTTP. Есть возможность использовать push через Pushgateway для некоторых случаев.
+  Prometheus по умолчанию использует pull-модель, опрашивая экспортеры по HTTP. Есть возможность использовать push через Pushgateway.
 
 TICK stack (Telegraf, InfluxDB, Chronograf, Kapacitor).
 
   Тип: Push
 
-  Telegraf агент собирает метрики и отправляет их в InfluxDB работая в решиже push.
+  Telegraf агент собирает метрики и отправляет их в InfluxDB работая в push режиме.
 
 Zabbix.
 
